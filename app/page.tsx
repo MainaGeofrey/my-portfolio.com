@@ -2,26 +2,52 @@ import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
 
+import { allProjects } from "contentlayer/generated";
+
 const navigation = [
-	{ name: "My CV", href: "/contact" },
+
 	{ name: "Projects", href: "/projects" },
 	{ name: "Contact", href: "/contact" },
 ];
 
 export default function Home() {
+	const featured = allProjects.find((project) => project.slug === "cv")!;
+
+	const sorted = allProjects
+	  .filter((p) => p.published)
+	  .filter(
+		(project) =>
+		  project.slug !== featured.slug 
+  
+	  );
+
+
 	return (
 		<div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
 			<nav className="my-16 animate-fade-in">
 				<ul className="flex items-center justify-center gap-4">
+				<div className="flex">
+					<Link
+						href={`/projects/${featured.slug}`}
+						className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+					>
+						My CV
+						<article className="relative w-full h-full p-4 md:p-8">
+						{/* Content for the article */}
+						</article>
+					</Link>
 					{navigation.map((item) => (
 						<Link
-							key={item.href}
-							href={item.href}
-							className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+						key={item.href}
+						href={item.href}
+						className="text-sm duration-500 text-zinc-500 hover:text-zinc-300 mr-4"
 						>
-							{item.name}
+						{item.name}
 						</Link>
 					))}
+
+				</div>
+
 				</ul>
 			</nav>
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />

@@ -1,0 +1,167 @@
+---
+title: "Payments Gateway"
+description: This is a payment platform that enables our clients to centralize their payments data from multiple mobile payments providers and also connect to QuickBooks Online.
+repository: ""
+date: "2023-01-20"
+published: true
+  
+---
+
+## Overview
+
+The Payments Gateway is a robust platform built using PHP, Laravel framework, Html, Bootstrap 5, Javascript and MySQL database. 
+It serves as a centralized hub for handling mobile payments from Safaricom's M-Pesa services, 
+similar to popular payment gateways like Stripe. The platform securely processes and manages data for our clients, 
+ensuring seamless and efficient payment transactions.
+
+### My Responsibilities in the Team Project
+
+1. Team lead for a team of 3 developers, I held the responsibility of overseeing project execution and coordination. In this role, I played a vital role in problem-solving and finding solutions whenever challenges arose. While I possessed a certain level of expertise, I always sought guidance from a senior developer if needed. Additionally, my team comprised a developer with similar expertise, an intern, and a senior developer who acted as the overall team lead.
+ Together, we collaborated to improve project outcomes and ensure efficient project management.
+2. Built RESTful APIs to connect with QuickBooks and clients' payment devices.
+3. Designed the MySQL database structure for efficient data management.
+4. Developed the user interface for the QuickBooks module, including client and user management, QuickBooks integration, and user authentication.
+5. Built the backend components of the system to handle payments and facilitate data synchronization.
+
+
+
+
+
+## Key Features
+
+### Secure Authentication and Authorization
+
+To provide a secure and reliable payment environment, the platform utilizes Laravel Sanctum, a token-based authentication system, to authenticate and authorize users. This ensures that only authenticated users can access the payment gateway's features and data.
+
+### Social Authentication
+
+The platform supports social authentication, including popular platforms like Google, enabling users to conveniently register and log in using their existing social media accounts. This feature simplifies the user onboarding process, enhancing user experience and engagement.
+
+
+### OTP Authentication
+
+The platform incorporates OTP (One-Time Password) authentication for an additional layer of security. Users receive unique OTPs via their registered phone numbers, strengthening the overall security and safeguarding client data.
+
+### QuickBooks Integration
+
+The platform seamlessly integrates with QuickBooks, a widely used accounting software, to automate accounting processes for our clients. Relevant payment data is securely pushed to QuickBooks, allowing clients to sync and manage their financial records effortlessly. This integration streamlines accounting tasks, saving time and ensuring accurate and up-to-date financial information.
+
+
+### Failed Payment Handling and Notifications
+
+The platform includes a robust process to handle failed payments. When a payment fails to process, clients are promptly notified, providing them with information about the status of their payments and enabling them to take necessary actions.
+
+### Payment Management Dashboard
+
+Clients have access to a comprehensive dashboard where they can view and manage their payment records. The dashboard displays all associated payments, allowing clients to easily track their transaction history. Additionally, clients can edit payment details directly from the dashboard, providing them with flexibility and control over their payment information.
+
+### SMS Notifications
+
+A backend system, integrated with Supervisor, sends SMS notifications to clients' users when their payments are received. This system enhances communication and provides real-time updates, ensuring transparency and prompt notification of successful transactions.
+
+### API Keys
+
+Clients are provided with API keys that enable their devices to securely send payment data to our platform for processing and synchronization.
+
+
+
+## Screenshots
+
+![Sign In](/payments/sign-in.png)
+*Sign in with email and password or choose social authentication.*
+
+![OTP](/payments/otp.png)
+*OTP for secure sign-in. OTP sent via registered phone number.*
+
+![User Management](/payments/invite-users.png)
+*Invite users by providing their details. Users are created and sent a verification email.*
+
+![Clients Users](/payments/users-table.png)
+*View and manage a client's users.*
+
+![Create a Client](/payments/clients_add.png)
+*Create a client with automatic assignment of the "client" role.*
+
+![Clients](/payments/clients.png)
+*View and manage a clients.*
+
+
+-
+![QuickBooks Configuration](/payments/connect_2.png)
+*Configure client QuickBooks configuration.*
+
+![QuickBooks Connect Flow](/payments/connect_flow.png)
+*QuickBooks integration flow.*
+
+![API Keys](/payments/api_keys_2.png)
+*API keys for device data submission.*
+
+
+
+
+
+
+
+
+
+
+
+
+## Detailed technical Description:
+
+The platform I developed is a robust payments gateway built using the PHP programming language and the Laravel framework. It serves as a central hub for handling mobile payments from Safaricom's M-Pesa services, similar to popular payment gateways like Stripe. The platform securely processes and manages data for our clients, ensuring seamless and efficient payment transactions.
+
+To provide a secure and reliable payment environment, the platform utilizes Laravel Sanctum, a token-based authentication system, for user authorization. This ensures that only authenticated users can access the payment gateway's features and data.
+
+To enhance security and protect sensitive financial information, the platform incorporates OTP (One-Time Password) authentication. Users receive unique OTPs for an additional layer of authentication, strengthening the platform's overall security and safeguarding client data.
+
+In addition to handling payments, the platform integrates with QuickBooks, a widely used accounting software, to automate accounting processes for our clients. It securely pushes relevant payment data to QuickBooks, allowing clients with QuickBooks accounts to seamlessly sync and manage their financial records. This integration streamlines accounting tasks, saving time and effort for clients and ensuring accurate and up-to-date financial information.
+
+Furthermore, the platform supports social authentication, including popular platforms like Google, enabling users to conveniently register and log in using their existing social media accounts. This feature simplifies the user onboarding process, enhancing user experience and engagement.
+
+By leveraging the power of Laravel, implementing essential security features such as Laravel Sanctum and OTP authentication, and integrating with QuickBooks for seamless accounting functionality, the platform provides a comprehensive and secure payment gateway solution. It enables efficient mobile payment processing, protects sensitive data, and simplifies financial management for our clients who have QuickBooks accounts.
+
+
+
+
+
+
+As part of my backend development expertise, I implemented a robust process to handle failed payments on the platform. When a payment fails to process via the Payment Initiation (PI) system to our platform, the client is promptly notified. This notification ensures that clients are informed about the status of their payments and can take necessary actions.
+
+To provide clients with a comprehensive view of their payments, I integrated a dashboard where they can access and manage their payment records. The dashboard displays all the payments associated with their account, allowing clients to easily track their transaction history. Additionally, clients have the ability to edit payment details directly from the dashboard, providing them with flexibility and control over their payment information.
+
+To automate the process of pushing payments to QuickBooks for accounting purposes, I implemented Supervisor. Supervisor is a process control system that ensures the reliable and continuous execution of tasks. It enables automatic retries and monitors the process of pushing payments to QuickBooks, providing fault tolerance and reliability. This integration simplifies the workflow and ensures that payment data is seamlessly and accurately synchronized with QuickBooks, enhancing the efficiency of the accounting process.
+
+By incorporating these features into the platform, I demonstrated my ability to handle failed payments, enable client notifications, provide a comprehensive payment dashboard, and utilize Supervisor for seamless integration with QuickBooks. These backend processes enhance the overall functionality and user experience of the platform, making it a reliable and efficient solution for clients.
+
+
+In addition to the existing features, I developed a backend system that leverages Supervisor to send SMS notifications to our clients' users when their payments are received. This system enhances communication and provides real-time updates to clients, ensuring transparency and prompt notification of successful transactions.
+
+Using Supervisor as a process control system, the backend system continuously monitors and manages the process of sending SMS notifications. It ensures that the system operates reliably, handles errors gracefully, and automatically retries failed SMS transmissions, providing a robust and fault-tolerant solution.
+
+The integration of this SMS notification system into the backend further strengthens the overall functionality of the platform. It enhances the user experience by keeping clients' users informed about the status of their payments in a timely manner, fostering trust and satisfaction.
+
+
+
+
+
+
+
+
+
+
+## Conclusion
+
+Through the implementation of Laravel Sanctum, OTP authentication, QuickBooks integration, and Supervisor for SMS notifications, the Payments Gateway platform provides a comprehensive and secure solution. It efficiently handles mobile payments, protects sensitive data, simplifies financial management, and ensures seamless communication with clients and their users.
+
+By showcasing my responsibilities, technical skills, and achievements within this project, I demonstrate my ability to deliver robust backend solutions and provide an exceptional user experience.
+
+
+
+
+
+
+
+
+
+

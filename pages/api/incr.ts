@@ -1,7 +1,7 @@
-import { Redis } from "@upstash/redis";
+//import { Redis } from "@upstash/redis";
 import { NextRequest, NextResponse } from "next/server";
 
-const redis = Redis.fromEnv();
+//const redis = Redis.fromEnv();
 export const config = {
 	runtime: "edge",
 };
@@ -22,7 +22,7 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 	if (!slug) {
 		return new NextResponse("Slug not found", { status: 400 });
 	}
-	const ip = req.ip;
+/*	const ip = req.ip;
 	if (ip) {
 		// Hash the IP in order to not store it directly in your db.
 		const buf = await crypto.subtle.digest(
@@ -43,5 +43,7 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 		}
 	}
 	await redis.incr(["pageviews", "projects", slug].join(":"));
-	return new NextResponse(null, { status: 202 });
+	return new NextResponse(null, { status: 202 });  */
+
+	return new NextResponse(null, { status: 200 });
 }

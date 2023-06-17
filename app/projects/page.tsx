@@ -7,6 +7,7 @@ import { Article } from "./article";
 import { Eye } from "lucide-react";
 
 export default function ProjectsPage() {
+  const views = 0;
   const featured = allProjects.find((project) => project.slug === "payments-gateway")!;
   const top2 = allProjects.find((project) => project.slug === "web-scrapper")!;
   const top3 = allProjects.find((project) => project.slug === "telegram-bot")!;
@@ -78,7 +79,7 @@ export default function ProjectsPage() {
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
             {[top2, top3].map((project) => (
               <Card key={project.slug}>
-                <Article project={project} />
+                <Article project={project} views={views} />
               </Card>
             ))}
           </div>
@@ -91,7 +92,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 0)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} />
+                  <Article project={project} views={views} />
                 </Card>
               ))}
           </div>
@@ -100,7 +101,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 1)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} />
+                  <Article project={project} views={views} />
                 </Card>
               ))}
           </div>
@@ -109,7 +110,7 @@ export default function ProjectsPage() {
               .filter((_, i) => i % 3 === 2)
               .map((project) => (
                 <Card key={project.slug}>
-                  <Article project={project} />
+                  <Article project={project} views={views} />
                 </Card>
               ))}
           </div>
